@@ -4,4 +4,5 @@ class User < ApplicationRecord
 	validates :email, presence:true, :uniqueness => true
 
 	belongs_to :blob
+	has_many :meetings
 end

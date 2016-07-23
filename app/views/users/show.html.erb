@@ -1,3 +1,13 @@
 <div class='page-header'><h2>This is <%=@user.name%></h2></div>
-<div>He has a blob called "<%=@user.blob.name%>"</div>
+<div><%=@user.name%> belongs_to a blob called "<%=@user.blob.name%>"</div>
+<div>Here are other users belonging to <%=@user.blob.name%></div>
+<div>
+	<ul>
+	<% @user.blob.users.each do |user|%>
+		<% if user.name != @user.name %>
+		<li><%= link_to user.name, user_path(user)%></li>
+		<% end %>
+	<% end %> 
+</ul>
+</div>
 <%= link_to 'Edit', edit_user_path(@user) %>
