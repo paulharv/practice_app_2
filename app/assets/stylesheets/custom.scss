@@ -5,6 +5,11 @@
 
 $gray-medium-light: #eaeaea;
 
+.logged-in-as{
+  color:white;
+  padding-top:10px;
+}
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723183139) do
+ActiveRecord::Schema.define(version: 20160724205613) do
 
   create_table "blobs", force: :cascade do |t|
     t.string   "name"
@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 20160723183139) do
     t.string   "name"
     t.integer  "age"
     t.integer  "blob_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "email"
+    t.string   "password_digest"
   end
 
 end

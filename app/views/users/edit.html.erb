@@ -14,6 +14,14 @@
 		<%= f.text_field :email, class:'form-control' %>
 	<div>
 	<div class="form-group">
+		<%= f.label :password %>
+		<%= f.password_field :password, class:'form-control' %>
+	<div>
+	<div class="form-group">
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation, class:'form-control' %>
+	<div>
+	<div class="form-group">
 		<%= f.label :blob %>
 		<%= f.select :blob_id, options_for_select(Blob.all.map{|b|[b.name, b.id]}), class:'form-control' %>
 	<div>

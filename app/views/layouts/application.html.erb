@@ -14,13 +14,23 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
         <%= link_to "sample app", '#', id: "logo" %>
+        <% if logged_in? %>
+          <span class="logged-in-as">Logged in as <%= current_user.name %></span>
+        <% end %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   '#' %></li>
             <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
-            <li><%= link_to "Sign up", '/signup' %></li>
+            <% if logged_in? %>
+              <li><%= link_to "Log out", '/logout', method:'delete' %></li>
+            <% else %>
+              <li><%= link_to "Log in", '/login' %></li>
+              <li><%= link_to "Sign up", '/signup' %></li>
+            <% end %>
           </ul>
         </nav>
       </div>
